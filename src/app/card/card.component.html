@@ -1,0 +1,35 @@
+<div class="container mb-3">
+  <div class="row">
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+      <label class="btn btn-outline-primary" for="btnradio1" (click)="filterByCategory('all')">All</label>
+    
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+      <label class="btn btn-outline-primary" for="btnradio2" (click)="filterByCategory('mobile')">Mobile</label>
+    
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+      <label class="btn btn-outline-primary" for="btnradio3" (click)="filterByCategory('fridge')">Fridge</label>
+
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+      <label class="btn btn-outline-primary" for="btnradio4" (click)="filterByCategory('tv')">TV</label>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row gy-3">
+        <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let product of ProductsArrayForFilter">
+            <div class="card mr-3" style="width: 15rem;">
+                <img [src]="product.image" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{product.name}}</h5>
+                  <p class="card-text">{{product.price}}</p>
+                  <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+              </div>
+            
+        </div>
+    </div>
+</div>
